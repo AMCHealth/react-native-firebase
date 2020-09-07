@@ -381,6 +381,10 @@ public class DisplayNotificationTask extends AsyncTask<Void, Void, Void> {
         android.getString("clickAction")
       );
 
+      if(android.containsKey("fullScreenIntent") && android.getBoolean("fullScreenIntent")) {
+        nb = nb.setFullScreenIntent(contentIntent, true);
+      }
+
       nb = nb.setContentIntent(contentIntent);
 
       // Build the notification and send it

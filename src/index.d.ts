@@ -1508,12 +1508,16 @@ declare module 'react-native-firebase' {
         vibrate?: number[];
         visibility?: Android.Visibility;
         when?: number;
+        fullScreenIntent?: boolean;
 
         addAction(action: Android.Action): Notification;
 
         addPerson(person: string): Notification;
 
         setAutoCancel(autoCancel: boolean): Notification;
+
+        //Full screen intent
+        setFullScreenIntent(setFullScreenIntent: boolean): Notification;
 
         setBadgeIconType(badgeIconType: Android.BadgeIconType): Notification;
 

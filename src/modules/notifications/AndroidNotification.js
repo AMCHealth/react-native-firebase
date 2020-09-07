@@ -150,6 +150,8 @@ export default class AndroidNotification {
       this._vibrate = data.vibrate;
       this._visibility = data.visibility;
       this._when = data.when;
+      //Full screen intent
+      this._fullScreenIntent = data.fullScreenIntent;
     }
 
     // Defaults
@@ -336,6 +338,16 @@ export default class AndroidNotification {
    */
   setAutoCancel(autoCancel: boolean): Notification {
     this._autoCancel = autoCancel;
+    return this._notification;
+  }
+
+  /**
+   * Fullscreen intent
+   * @param fullScreenIntent
+   * @returns {Notification}
+   */
+  setFullScreenIntent(fullScreenIntent) {
+    this._fullScreenIntent = fullScreenIntent;
     return this._notification;
   }
 
@@ -778,6 +790,8 @@ export default class AndroidNotification {
       vibrate: this._vibrate,
       visibility: this._visibility,
       when: this._when,
+       //Fullscreen intent
+       fullScreenIntent: this._fullScreenIntent,
     };
   }
 }
